@@ -30,7 +30,7 @@ title-slide-attributes:
 
 - Família é um conjunto de pessoas, ligadas por laços de parentesco, dependência doméstica ou normas de convivência, que vive em um mesmo domicílio [@ibge_sintese_2015].
 
-- Neste trabalho, foi considerado uma família como sendo composta por, em média, quatro indivíduos, sendo dois adultos e duas crianças [@dieese_metodologia_2016].
+  - Neste trabalho, foi considerado uma família como sendo composta por, em média, quatro indivíduos, sendo dois adultos e duas crianças [@dieese_metodologia_2016].
 
 
 ## Consumo Final das Famílias Brasileiras – em milhões de R$ – 2019/2022 {.center}
@@ -67,7 +67,7 @@ knitr::include_graphics(
 
 ## Taxa de variação acumulada em 12 meses do consumo per capita das famílias – % – 2019/2022 {.center}
 
-O quanto o consumo por pessoa das famílias brasileiras variou em comparação com os últimos 12 meses. 
+Quanto o consumo _por pessoa_ das famílias brasileiras variou em comparação com os últimos 12 meses. 
 
 ::: columns
 ::: {.column width="65%"}
@@ -91,7 +91,7 @@ knitr::include_graphics(
 <br>
 <br>
 
-- Após uma recuperação do consumo, em 2019, houve quedas significativas no primeiro semestre de 2020;
+- Após uma recuperação do consumo, em 2019, houve quedas significativas no primeiro semestre de 2020.
 
 - Nos trimestres seguintes, com o início da vacinação, ocorreram melhoras nos níveis apresentados, iniciando a recuperação do consumo das famílias.
 
