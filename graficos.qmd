@@ -73,7 +73,7 @@ consumo |>
   theme(
     panel.grid.minor.y = element_blank(), 
     panel.grid.major.x = element_blank(), 
-    plot.caption = element_text(hjust = 0.5)
+    plot.caption = element_text(hjust = 0.5, size = 10)
   )
 
 ```
@@ -128,13 +128,13 @@ variacao_12_meses |>
   labs(
     x = "", 
     y = "",
-    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+    caption = "Fonte: Ipeadata (2022); DIEESE (2022)"
   ) +
   theme_minimal() +
   theme(
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
-    plot.caption = element_text(hjust = 0.5)
+    plot.caption = element_text(hjust = 0.5, size = 10)
   )
 
 
@@ -211,7 +211,7 @@ endividamento |>
   labs(
     x = "", 
     y = "",
-    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+    caption = "Fonte: CNC-PEIC (2022)"
   ) +
   scale_y_continuous(
     limits = c(0, 0.9), 
@@ -229,7 +229,7 @@ endividamento |>
     panel.grid.major.x = element_blank(), 
     panel.grid.minor.x = element_blank(),
     axis.text.x = element_text(angle = 90),
-    plot.caption = element_text(hjust = 0.5)
+    plot.caption = element_text(hjust = 0.5, size = 10)
   )
 
 
@@ -272,7 +272,7 @@ icf |>
   labs(
     x = "", 
     y = "",
-    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+    caption = "Fonte: CNC (2022)"
   ) +
   scale_y_continuous(
     limits = c(0,110),
@@ -289,7 +289,7 @@ icf |>
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     axis.text.x = element_text(angle = 90),
-    plot.caption = element_text(hjust = 0.5)
+    plot.caption = element_text(hjust = 0.5, size = 10)
   )
 
 
