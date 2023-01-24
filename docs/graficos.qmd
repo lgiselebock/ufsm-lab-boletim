@@ -1,0 +1,301 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+library(ggiraph)
+
+```
+
+
+## Figura 1
+
+```{r figura-01, echo = FALSE, message = FALSE, warning = FALSE}
+
+#| fig-dpi: 600
+#| fig-height: 100
+#| fig-weight: 50
+
+
+consumo <- readxl::read_xls(
+    here::here("docs", "data", "2019-2022-ipeadata-pib-consumo-final-das-familias.xls")
+  ) |> 
+  janitor::clean_names() |> 
+  dplyr::select("data", "consumo_familiar_real_7") |> 
+  dplyr::rename("consumo_familiar_real" = "consumo_familiar_real_7") |> 
+  dplyr::filter(data != "2018 T4") |> 
+  dplyr::mutate(
+    data = dplyr::case_when(
+      data == "2019 T1" ~ "2019 \nT1",
+      data == "2019 T2" ~ "2019 \nT2",
+      data == "2019 T3" ~ "2019 \nT3",
+      data == "2019 T4" ~ "2019 \nT4",
+      data == "2020 T1" ~ "2020 \nT1",
+      data == "2020 T2" ~ "2020 \nT2",
+      data == "2020 T3" ~ "2020 \nT3",
+      data == "2020 T4" ~ "2020 \nT4",
+      data == "2021 T1" ~ "2021 \nT1",
+      data == "2021 T2" ~ "2021 \nT2",
+      data == "2021 T3" ~ "2021 \nT3",
+      data == "2021 T4" ~ "2021 \nT4",
+      data == "2022 T1" ~ "2022 \nT1",
+      data == "2022 T2" ~ "2022 \nT2",
+      data == "2022 T3" ~ "2022 \nT3",
+      TRUE ~ data
+    )
+  )
+
+
+consumo |> 
+  ggplot() +
+  aes(x = as.factor(data), y = consumo_familiar_real) +
+  geom_col(fill = "#005c8b") +
+  scale_y_continuous(
+    limits = c(0, 1700000), 
+    breaks = seq(0, 1700000, 200000),
+    labels = scales::dollar_format(
+      prefix = "R$", 
+      big.mark = ".", 
+      decimal.mark = ","
+    )
+  ) +
+  labs(
+    x = "", 
+    y = "", 
+    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(), 
+    panel.grid.major.x = element_blank(), 
+    plot.caption = element_text(hjust = 0.5)
+  )
+
+```
+
+
+## Figura 2
+
+```{r figura-02, echo = FALSE, message = FALSE, warning = FALSE}
+
+#| fig-dpi: 600
+#| fig-height: 100
+#| fig-weight: 50
+
+
+variacao_12_meses <- readxl::read_excel(
+  here::here("docs", "data", "2019-2022-variacao-consumo-acumulado-12-meses.xls")
+) |> 
+  janitor::clean_names() |> 
+  dplyr::select("data_10", "variacao") |> 
+  dplyr::rename("data" = "data_10") |> 
+  tidyr::drop_na() |> 
+    dplyr::mutate(
+    data = dplyr::case_when(
+      data == "2019 T1" ~ "2019 \nT1",
+      data == "2019 T2" ~ "2019 \nT2",
+      data == "2019 T3" ~ "2019 \nT3",
+      data == "2019 T4" ~ "2019 \nT4",
+      data == "2020 T1" ~ "2020 \nT1",
+      data == "2020 T2" ~ "2020 \nT2",
+      data == "2020 T3" ~ "2020 \nT3",
+      data == "2020 T4" ~ "2020 \nT4",
+      data == "2021 T1" ~ "2021 \nT1",
+      data == "2021 T2" ~ "2021 \nT2",
+      data == "2021 T3" ~ "2021 \nT3",
+      data == "2021 T4" ~ "2021 \nT4",
+      data == "2022 T1" ~ "2022 \nT1",
+      data == "2022 T2" ~ "2022 \nT2",
+      data == "2022 T3" ~ "2022 \nT3",
+      TRUE ~ data
+    ),
+    # variacao = round(variacao*100, 2),
+    # variacao_perc = as.double(glue::glue("{variacao}", "%"))
+  )
+
+variacao_12_meses |> 
+  ggplot() +
+  aes(x = as.factor(data), y = variacao) +
+  geom_col(fill = "#005c8b") +
+  scale_y_continuous(
+    limits = c(-0.11, 0.16), 
+    breaks = seq(-0.10, 0.16, 0.025),
+    labels = scales::percent
+  ) +
+  labs(
+    x = "", 
+    y = "",
+    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.caption = element_text(hjust = 0.5)
+  )
+
+
+```
+
+
+## Figura 3
+
+```{r figura-03, echo = FALSE, message = FALSE, warning = FALSE}
+
+#| fig-dpi: 600
+
+
+# sysfonts::font_add_google(name = "Lato", family = "Lato")
+# showtext::showtext_auto()
+
+
+endividamento <- readxl::read_excel(
+  here::here("docs", "data", "2019-2022-cnc-endividamento-familiar.xls")
+) |> 
+  janitor::clean_names() |> 
+  dplyr::rename("data" = "x1") |> 
+  dplyr::mutate(
+    data = lubridate::ymd(data),
+    data_num = as.numeric(data)
+  )
+
+endividamento |> 
+  ggplot() +
+  aes(x = data) +
+  geom_line(
+    aes(y = familias_endividadas), 
+    color = "#005c8b", 
+    linewidth = 1
+  ) +
+  geom_line(
+    aes(y = familias_com_contas_em_atraso), 
+    color = "#f58634",
+    linewidth = 1
+  ) +
+  annotate(
+    "text",
+    x = as.Date("2021-02-01"),
+    y = 0.59,
+    label = "Famílias Endividadas",
+    color = "#005c8b",
+    fontface = "bold",
+    family = "Lato"
+  ) +
+  annotate(
+    "text",
+    x = as.Date("2021-02-01"),
+    y = 0.19,
+    label = "Famílias com Contas em Atraso",
+    color = "#f58634",
+    fontface = "bold",
+    family = "Lato"
+  ) +
+  annotate(
+    "text",
+    x = c(as.Date("2019-01-20"), as.Date("2022-10-20")),
+    y = c(0.66, 0.85),
+    label = c("60,11%", "78,9%"),
+    size = 3.5,
+    family = "Lato"
+  ) +
+  annotate(
+    "text",
+    x = c(as.Date("2019-01-20"), as.Date("2022-10-20")),
+    y = c(0.29, 0.35),
+    label = c("22,9%", "30,3%"),
+    size = 3.5,
+    family = "Lato"
+  ) +
+  labs(
+    x = "", 
+    y = "",
+    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+  ) +
+  scale_y_continuous(
+    limits = c(0, 0.9), 
+    breaks = seq(0, 0.9, 0.1),
+    labels = scales::percent
+  ) +
+  scale_x_date(
+    limit = c(as.Date("2019-01-01"), as.Date("2022-11-01")),
+    date_breaks = "2 month",
+    date_labels = "%Y %b"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(), 
+    panel.grid.minor.x = element_blank(),
+    axis.text.x = element_text(angle = 90),
+    plot.caption = element_text(hjust = 0.5)
+  )
+
+
+  
+
+```
+
+
+## Figura 4
+
+```{r figura-04, echo = FALSE, message = FALSE, warning = FALSE}
+
+#| fig-dpi: 600
+
+
+icf <- readxl::read_excel(
+    here::here("docs", "data", "2019-2022-icf-serie-historica.xls")
+  ) |> 
+  janitor::clean_names() |> 
+  dplyr::select("x1", "icf") |> 
+  dplyr::rename("data" = "x1") |> 
+  dplyr::mutate(data = as.Date(data))
+
+
+icf |> 
+  ggplot() +
+  aes(x = data, y = icf) +
+  geom_col(
+    fill = "#005c8b", 
+    width = 20
+  ) +
+  annotate(
+    "text",
+    x = c(as.Date("2019-02-27"), as.Date("2020-03-10"), as.Date("2020-06-20"), as.Date("2022-10-01")),
+    y = c(105, 105, 75, 92),
+    label = c("95,9 pontos", "99,9", "66,1", "87 pontos"),
+    size = 3.5,
+    family = "Lato"
+  ) +
+  labs(
+    x = "", 
+    y = "",
+    caption = "Fonte: IBGE/SCN – Trimestral (2022)"
+  ) +
+  scale_y_continuous(
+    limits = c(0,110),
+    breaks = seq(0, 110, 20)
+  ) +
+  scale_x_date(
+    limit = c(as.Date("2019-01-01"), as.Date("2022-11-01")),
+    date_breaks = "2 month",
+    date_labels = "%Y %b"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.text.x = element_text(angle = 90),
+    plot.caption = element_text(hjust = 0.5)
+  )
+
+
+```
+

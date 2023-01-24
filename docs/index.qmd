@@ -1,0 +1,185 @@
+---
+title: "O Consumo e o Endividamento Brasileiro entre os anos de 2019 e 2022"
+author: "Luísa Gisele Böck"
+format: 
+  revealjs: 
+    incremental: false
+    transition: slide
+    footer: "Slides por [Luísa Gisele Böck](https://luisa.rbind.io/), feito com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Código disponível no [GitHub](https://github.com/lgiselebock/ufsm-lab-boletim)."
+    theme: ["custom.scss"]
+    slide-number: c/t
+    show-slide-number: all
+    bibliography: references.bib
+    csl: csl/abnt.csl
+title-slide-attributes: 
+  data-background-image: ufsm-logo.png
+  data-background-size: 60%
+  data-background-position: 50% 5%
+---
+
+## Introdução {.center}
+
+- Consumo familiar consiste em uma das variáveis mais importantes do Sistema de Contas Nacional (SCN):
+
+  - principal componente da demanda final;
+  
+  - sua evolução permite compreender a acessibilidade das famílias aos bens e serviços ofertados.
+
+- Família é um conjunto de pessoas, ligadas por laços de parentesco, dependência doméstica ou normas de convivência, que vive em um mesmo domicílio [@ibge_sintese_2015].
+
+- Neste trabalho, foi considerado uma família como sendo composta por, em média, quatro indivíduos, sendo dois adultos e duas crianças [@dieese_metodologia_2016].
+
+
+## Consumo Final das Famílias Brasileiras – em milhões de R$ – 2019/2022 {.smaller}
+
+::: columns
+::: {.column width="65%"}
+
+```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::include_graphics(
+  here::here("docs", "graficos_files", "figure-html", "figura-01-1.png")
+)
+
+```
+
+:::
+
+::: {.column width="35%"}
+
+<br>
+<br>
+<br>
+<br>
+
+- Após um crescimento no consumo, a crise do Coronavírus desencadeou uma queda de 20% entre o final de 2019 e o segundo semestre de 2020.
+
+- Com a retomada do comércio e do setor de serviços, no segundo semestre de 2020, o consumo voltou a crescer, atingindo seu valor máximo em 2022.
+
+:::
+:::
+
+
+## Taxa de variação acumulada em 12 meses do consumo per capita das famílias – % – 2019/2022 {.smaller}
+
+::: columns
+::: {.column width="65%"}
+
+```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::include_graphics(
+  here::here("docs", "graficos_files", "figure-html", "figura-02-1.png")
+)
+
+```
+
+:::
+
+::: {.column width="35%"}
+
+<br>
+<br>
+<br>
+
+Apresenta o quanto o consumo por pessoa das famílias brasileiras variou em comparação com os últimos 12 meses. 
+
+- Após uma recuperação do consumo, em 2019, houve quedas significativas no primeiro semestre de 2020;
+
+- Nos trimestres seguintes, com o início da vacinação, ocorreram melhoras nos níveis apresentados, iniciando a recuperação do consumo das famílias.
+
+:::
+:::
+
+
+## Endividamento das famílias – % do total de famílias – 2019/2022 {.smaller}
+
+Ampliação do endividamento das famílias brasileiras ocasionado pelas elevadas taxas de desemprego, pela má administração das finanças pessoais, pelas compras parceladas, pelos empréstimos impulsivos e, principalmente, pela elevação da inflação nos últimos dias e a consequente redução de poder de compra dos brasileiros [@menasce_endividamento_2020].
+
+::: columns
+::: {.column width="65%"}
+
+```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::include_graphics(
+  here::here("docs", "graficos_files", "figure-html", "figura-03-1.png")
+)
+
+```
+
+:::
+
+::: {.column width="35%"}
+
+<br>
+<br>
+
+- O percentual de **famílias endividadas** saltou de 60,11% para 78,9%, caracterizando um aumento de 31%.
+
+- Intensificação do número de **famílias com contas em atraso** -- de 22.9% para 30,3% -- indicando um acréscimo de 7,4 pontos percentuais.
+
+O endividamento familiar com o Sistema Financeiro Nacional, excetuando o crédito habitacional, em relação à renda acumulada dos últimos 12 meses, passou de 23,4% para 33,52%, ou seja, um salto de 10 pontos percentuais [@banco_central_endividamento_2022]. 
+
+:::
+:::
+
+
+## Intenção de Consumo Familiar – 2019/2022 {.smaller}
+
+A pesquisa de Intenção de Consumo das Famílias (ICF) é um indicador com capacidade de medir a percepção que os consumidores têm em relação a particularidades importantes da condição de vida da sua família. Esse índice verifica a capacidade de consumo (atual e de curto prazo), o nível de renda doméstico, a segurança no emprego e a qualidade de consumo presente e futuro. Este pode ser considerado um indicador antecedente ao consumo, a partir do ponto de vista dos consumidores, e que pode ser utilizado para o planejamento do comércio e de outras atividades produtivas.
+
+::: columns
+::: {.column width="65%"}
+
+```{r}
+
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::include_graphics(
+  here::here("docs", "graficos_files", "figure-html", "figura-04-1.png")
+)
+
+```
+
+:::
+
+::: {.column width="35%"}
+
+<br>
+<br>
+
+A ICF passou por instabilidades durante o período observado:
+
+  - iniciou 2019 com 95,9 pontos e alcançou o pico de 99,9 pontos em março de 2020;
+  
+  - com o advendo da Pandemia, apresentou seu menor nível com 66,1 pontos;
+  
+  - em outubro de 2022 alcançou 87 pontos, o maior nível desde junho de 2021.
+  
+Esse resultado pode ser explicado pela combinação de uma situação de deflação com crescimento do emprego formal, das transferências de renda e da contratação de crédito pelas famílias
+
+:::
+:::
+
+
+## Conclusões {.center}
+
+Após um período de recessão no país, o governo Bolsonaro iniciou o ano de 2019 sob grandes expectativas de recuperação econômica, com a redução dos índices de inflação e o aumento do consumo por parte das famílias. Tal otimismo logo esmoreceu, especialmente com o choque da pandemia do Coronavírus, em março de 2020, que elevou os índices de inflação e reduziu os níveis de consumo, recrudescendo o endividamento das famílias brasileiras. A expectativa da retomada das atividades, a partir do segundo semestre de 2021, exacerbou não apenas a Intenção de Consumo Familiar, mas, sobretudo a próprio Consumo Familiar, especialmente após a vacinação e a desaceleração da pandemia. Entretanto, tal processo não foi isento de contradições uma vez que, verificou-se uma crescente ascensão do endividamento familiar.	
+
+Com relação ao comportamento de um cenário futuro, a OCDE [-@ocde_brasil_2022] assinala que o consumo das famílias, juntamente com o investimento privado e as exportações serão os principais motores de crescimento do Brasil. As transferências sociais e o crescimento do emprego impulsionarão o consumo das famílias. Entretanto, as instabilidades do cenário econômico mundial, com pressões inflacionárias e desaceleração da atividade econômica global, impactarão nas taxas de juros que permanecerão elevadas, agravando a situação financeira das famílias e comprometendo o crescimento econômico do país no próximo ano.
+
+
+## Referências {.center}
