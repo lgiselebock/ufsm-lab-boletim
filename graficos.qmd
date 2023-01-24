@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Figuras utilizadas nos slides"
 format: html
 ---
 
@@ -9,7 +9,6 @@ format: html
 #| warning: false
 
 library(ggplot2)
-library(ggiraph)
 
 ```
 
@@ -24,7 +23,7 @@ library(ggiraph)
 
 
 consumo <- readxl::read_xls(
-    here::here("docs", "data", "2019-2022-ipeadata-pib-consumo-final-das-familias.xls")
+    here::here("data", "2019-2022-ipeadata-pib-consumo-final-das-familias.xls")
   ) |> 
   janitor::clean_names() |> 
   dplyr::select("data", "consumo_familiar_real_7") |> 
@@ -90,7 +89,7 @@ consumo |>
 
 
 variacao_12_meses <- readxl::read_excel(
-  here::here("docs", "data", "2019-2022-variacao-consumo-acumulado-12-meses.xls")
+  here::here("data", "2019-2022-variacao-consumo-acumulado-12-meses.xls")
 ) |> 
   janitor::clean_names() |> 
   dplyr::select("data_10", "variacao") |> 
@@ -114,9 +113,7 @@ variacao_12_meses <- readxl::read_excel(
       data == "2022 T2" ~ "2022 \nT2",
       data == "2022 T3" ~ "2022 \nT3",
       TRUE ~ data
-    ),
-    # variacao = round(variacao*100, 2),
-    # variacao_perc = as.double(glue::glue("{variacao}", "%"))
+    )
   )
 
 variacao_12_meses |> 
@@ -156,13 +153,12 @@ variacao_12_meses |>
 
 
 endividamento <- readxl::read_excel(
-  here::here("docs", "data", "2019-2022-cnc-endividamento-familiar.xls")
+  here::here("data", "2019-2022-cnc-endividamento-familiar.xls")
 ) |> 
   janitor::clean_names() |> 
   dplyr::rename("data" = "x1") |> 
   dplyr::mutate(
-    data = lubridate::ymd(data),
-    data_num = as.numeric(data)
+    data = lubridate::ymd(data)
   )
 
 endividamento |> 
@@ -250,7 +246,7 @@ endividamento |>
 
 
 icf <- readxl::read_excel(
-    here::here("docs", "data", "2019-2022-icf-serie-historica.xls")
+    here::here("data", "2019-2022-icf-serie-historica.xls")
   ) |> 
   janitor::clean_names() |> 
   dplyr::select("x1", "icf") |> 
@@ -267,8 +263,8 @@ icf |>
   ) +
   annotate(
     "text",
-    x = c(as.Date("2019-02-27"), as.Date("2020-03-10"), as.Date("2020-06-20"), as.Date("2022-10-01")),
-    y = c(105, 105, 75, 92),
+    x = c(as.Date("2019-02-27"), as.Date("2020-03-10"), as.Date("2020-07-20"), as.Date("2022-10-01")),
+    y = c(105, 105, 73, 92),
     label = c("95,9 pontos", "99,9", "66,1", "87 pontos"),
     size = 3.5,
     family = "Lato"

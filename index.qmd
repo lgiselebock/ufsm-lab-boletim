@@ -1,6 +1,9 @@
 ---
-title: "O Consumo e o Endividamento Brasileiro entre os anos de 2019 e 2022"
+title: "O Consumo e o Endividamento Brasileiro"
+subtitle: "Uma análise de Conjuntura do Governo Bolsonaro"
 author: "Luísa Gisele Böck"
+date: "01/24/2023"
+date-format: "MMMM DD, YYYY"
 format: 
   revealjs: 
     incremental: false
@@ -30,7 +33,7 @@ title-slide-attributes:
 - Neste trabalho, foi considerado uma família como sendo composta por, em média, quatro indivíduos, sendo dois adultos e duas crianças [@dieese_metodologia_2016].
 
 
-## Consumo Final das Famílias Brasileiras – em milhões de R$ – 2019/2022 {.smaller}
+## Consumo Final das Famílias Brasileiras – em milhões de R$ – 2019/2022 {.center}
 
 ::: columns
 ::: {.column width="65%"}
@@ -42,7 +45,7 @@ title-slide-attributes:
 #| warning: false
 
 knitr::include_graphics(
-  here::here("docs", "graficos_files", "figure-html", "figura-01-1.png")
+  here::here("graficos_files", "figure-html", "figura-01-1.png")
 )
 
 ```
@@ -51,8 +54,6 @@ knitr::include_graphics(
 
 ::: {.column width="35%"}
 
-<br>
-<br>
 <br>
 <br>
 
@@ -64,7 +65,9 @@ knitr::include_graphics(
 :::
 
 
-## Taxa de variação acumulada em 12 meses do consumo per capita das famílias – % – 2019/2022 {.smaller}
+## Taxa de variação acumulada em 12 meses do consumo per capita das famílias – % – 2019/2022 {.center}
+
+O quanto o consumo por pessoa das famílias brasileiras variou em comparação com os últimos 12 meses. 
 
 ::: columns
 ::: {.column width="65%"}
@@ -76,7 +79,7 @@ knitr::include_graphics(
 #| warning: false
 
 knitr::include_graphics(
-  here::here("docs", "graficos_files", "figure-html", "figura-02-1.png")
+  here::here("graficos_files", "figure-html", "figura-02-1.png")
 )
 
 ```
@@ -87,9 +90,6 @@ knitr::include_graphics(
 
 <br>
 <br>
-<br>
-
-Apresenta o quanto o consumo por pessoa das famílias brasileiras variou em comparação com os últimos 12 meses. 
 
 - Após uma recuperação do consumo, em 2019, houve quedas significativas no primeiro semestre de 2020;
 
@@ -113,7 +113,7 @@ Ampliação do endividamento das famílias brasileiras ocasionado pelas elevadas
 #| warning: false
 
 knitr::include_graphics(
-  here::here("docs", "graficos_files", "figure-html", "figura-03-1.png")
+  here::here("graficos_files", "figure-html", "figura-03-1.png")
 )
 
 ```
@@ -127,7 +127,7 @@ knitr::include_graphics(
 
 - O percentual de **famílias endividadas** saltou de 60,11% para 78,9%, caracterizando um aumento de 31%.
 
-- Intensificação do número de **famílias com contas em atraso** -- de 22.9% para 30,3% -- indicando um acréscimo de 7,4 pontos percentuais.
+- Ocorreu uma intensificação do número de **famílias com contas em atraso** -- de 22.9% para 30,3% -- indicando um acréscimo de 7,4 pontos percentuais.
 
 O endividamento familiar com o Sistema Financeiro Nacional, excetuando o crédito habitacional, em relação à renda acumulada dos últimos 12 meses, passou de 23,4% para 33,52%, ou seja, um salto de 10 pontos percentuais [@banco_central_endividamento_2022]. 
 
@@ -137,7 +137,7 @@ O endividamento familiar com o Sistema Financeiro Nacional, excetuando o crédit
 
 ## Intenção de Consumo Familiar – 2019/2022 {.smaller}
 
-A pesquisa de Intenção de Consumo das Famílias (ICF) é um indicador com capacidade de medir a percepção que os consumidores têm em relação a particularidades importantes da condição de vida da sua família. Esse índice verifica a capacidade de consumo (atual e de curto prazo), o nível de renda doméstico, a segurança no emprego e a qualidade de consumo presente e futuro. Este pode ser considerado um indicador antecedente ao consumo, a partir do ponto de vista dos consumidores, e que pode ser utilizado para o planejamento do comércio e de outras atividades produtivas.
+A pesquisa de Intenção de Consumo das Famílias (ICF) é um indicador com capacidade de medir a percepção que os consumidores têm em relação a particularidades importantes da condição de vida da sua família. Esse índice verifica a capacidade de consumo (atual e de curto prazo), o nível de renda doméstico, a segurança no emprego e a qualidade de consumo presente e futuro. Este pode ser considerado um indicador antecedente ao consumo, a partir do ponto de vista dos consumidores, e que pode ser utilizado para o planejamento do comércio e de outras atividades produtivas [@fecomerciosp_icf_2022].
 
 ::: columns
 ::: {.column width="65%"}
@@ -149,7 +149,7 @@ A pesquisa de Intenção de Consumo das Famílias (ICF) é um indicador com capa
 #| warning: false
 
 knitr::include_graphics(
-  here::here("docs", "graficos_files", "figure-html", "figura-04-1.png")
+  here::here("graficos_files", "figure-html", "figura-04-1.png")
 )
 
 ```
@@ -158,7 +158,6 @@ knitr::include_graphics(
 
 ::: {.column width="35%"}
 
-<br>
 <br>
 
 A ICF passou por instabilidades durante o período observado:
@@ -179,7 +178,11 @@ Esse resultado pode ser explicado pela combinação de uma situação de deflaç
 
 Após um período de recessão no país, o governo Bolsonaro iniciou o ano de 2019 sob grandes expectativas de recuperação econômica, com a redução dos índices de inflação e o aumento do consumo por parte das famílias. Tal otimismo logo esmoreceu, especialmente com o choque da pandemia do Coronavírus, em março de 2020, que elevou os índices de inflação e reduziu os níveis de consumo, recrudescendo o endividamento das famílias brasileiras. A expectativa da retomada das atividades, a partir do segundo semestre de 2021, exacerbou não apenas a Intenção de Consumo Familiar, mas, sobretudo a próprio Consumo Familiar, especialmente após a vacinação e a desaceleração da pandemia. Entretanto, tal processo não foi isento de contradições uma vez que, verificou-se uma crescente ascensão do endividamento familiar.	
 
+<br>
+
 Com relação ao comportamento de um cenário futuro, a OCDE [-@ocde_brasil_2022] assinala que o consumo das famílias, juntamente com o investimento privado e as exportações serão os principais motores de crescimento do Brasil. As transferências sociais e o crescimento do emprego impulsionarão o consumo das famílias. Entretanto, as instabilidades do cenário econômico mundial, com pressões inflacionárias e desaceleração da atividade econômica global, impactarão nas taxas de juros que permanecerão elevadas, agravando a situação financeira das famílias e comprometendo o crescimento econômico do país no próximo ano.
 
 
 ## Referências {.center}
+
+
